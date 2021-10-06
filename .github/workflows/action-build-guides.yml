@@ -10,4 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Invoke build-gradle script
-      run: ./actions-build-guide.sh
+      run: pwd
+    - name: another
+      run: ls -al
