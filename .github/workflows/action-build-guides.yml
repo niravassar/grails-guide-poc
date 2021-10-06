@@ -12,4 +12,6 @@ jobs:
     - name: Invoke build-gradle script
       run: pwd
     - name: another
+      run: cd ..
+    - name: another
       run: ls -al
