@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Build Guide
 
 on:
   workflow_dispatch:
