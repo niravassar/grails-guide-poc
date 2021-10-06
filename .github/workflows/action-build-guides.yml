@@ -9,5 +9,5 @@ jobs:
   build-guide:
     runs-on: ubuntu-latest
     steps:
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+    - name: Invoke build-gradle script
+      run: echo "Hello"
