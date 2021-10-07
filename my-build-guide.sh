@@ -6,6 +6,7 @@ export GUIDE_NAME=${PWD##*/}
 
 echo "***** $GUIDE_NAME ****"
 echo "Publishing guide for branch $GITHUB_REPOSITORY"
+echo "*** $GITHUB_CONTEXT ***"
 
 #./gradlew -Dgeb.env=chromeHeadless check || EXIT_STATUS=$?
 
