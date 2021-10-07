@@ -11,7 +11,7 @@ jobs:
         java: ['11']
     env:
       JDK_VERSION:  ${{ matrix.java }}
-      GITHUB_CONTEXT: ${{ toJSON(github) }}
+      GIT_NAME: ${{ github.actor }}
     steps:
       - uses: actions/checkout@v2
         with:
