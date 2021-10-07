@@ -5,7 +5,7 @@ export EXIT_STATUS=0
 export GUIDE_NAME=${PWD##*/}
 
 echo "***** $GUIDE_NAME ****"
-echo "Publishing guide for branch $TRAVIS_BRANCH"
+echo "Publishing guide for branch $GITHUB_REPOSITORY"
 
 #./gradlew -Dgeb.env=chromeHeadless check || EXIT_STATUS=$?
 
