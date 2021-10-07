@@ -13,17 +13,12 @@ if [[ $EXIT_STATUS -ne 0 ]]; then
     exit $EXIT_STATUS
 fi
 
-echo "*********** show directory before publish guide **************"
-ls -al
 
 ./gradlew publishGuide || EXIT_STATUS=$?
 if [[ $EXIT_STATUS -ne 0 ]]; then
     echo "PublishGuide failed"
     exit $EXIT_STATUS
 fi
-
-echo "*********** show directory after publish guide **************"
-ls -al build/docs/
 
 #
 #if [ "$TRAVIS_BRANCH" = "master" ] || [ "$TRAVIS_BRANCH" = "grails3" ]; then
