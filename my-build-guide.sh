@@ -3,7 +3,7 @@ set -e
 
 export EXIT_STATUS=0
 export GUIDE_NAME=${PWD##*/}
-export GUIDE_BRANCH_SHORT=${GUIDE_BRANCH##*refs/heads)}
+export GUIDE_BRANCH_SHORT=${GUIDE_BRANCH##*refs/heads}
 
 echo "********* branch name *******"
 echo "$GUIDE_BRANCH"
