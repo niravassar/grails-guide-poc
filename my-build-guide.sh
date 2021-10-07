@@ -8,7 +8,7 @@ export GUIDE_BRANCH_SHORT=${GUIDES_BRANCH##*(refs/heads/)}
 echo "********* branch name *******"
 echo "$GUIDE_BRANCH"
 echo "********* branch name short *******"
-echo "$GUIDE_BRANCH"_SHORT
+echo "$GUIDE_BRANCH_SHORT"
 
 ##### WORKS
 #echo "Publishing guide for branch $GITHUB_REPOSITORY"
