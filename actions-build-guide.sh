@@ -7,4 +7,4 @@ set -e
 #curl -O https://raw.githubusercontent.com/grails/grails-guides/master/travis/build-guide
 #chmod 777 build-guide
 
-./my-build-guide
+./my-build-guide.sh
