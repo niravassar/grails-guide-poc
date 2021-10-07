@@ -4,22 +4,27 @@ set -e
 export EXIT_STATUS=0
 export GUIDE_NAME=${PWD##*/}
 
-echo "***** $GUIDE_NAME ****"
 echo "Publishing guide for branch $GITHUB_REPOSITORY"
-echo "*** GIT_NAME $GIT_NAME ***"
 
 ./gradlew -Dgeb.env=chromeHeadless check || EXIT_STATUS=$?
 
-#if [[ $EXIT_STATUS -ne 0 ]]; then
-#    echo "Check failed"
-#    exit $EXIT_STATUS
-#fi
-#
-#./gradlew publishGuide || EXIT_STATUS=$?
-#if [[ $EXIT_STATUS -ne 0 ]]; then
-#    echo "PublishGuide failed"
-#    exit $EXIT_STATUS
-#fi
+if [[ $EXIT_STATUS -ne 0 ]]; then
+    echo "Check failed"
+    exit $EXIT_STATUS
+fi
+
+echo "*********** show directory before publish guide **************"
+ls -al
+
+./gradlew publishGuide || EXIT_STATUS=$?
+if [[ $EXIT_STATUS -ne 0 ]]; then
+    echo "PublishGuide failed"
+    exit $EXIT_STATUS
+fi
+
+echo "*********** show directory after publish guide **************"
+ls -al build/docs/
+
 #
 #if [ "$TRAVIS_BRANCH" = "master" ] || [ "$TRAVIS_BRANCH" = "grails3" ]; then
 #    if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
