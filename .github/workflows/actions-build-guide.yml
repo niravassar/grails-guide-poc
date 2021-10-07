@@ -1,0 +1,31 @@
+# This is a basic workflow that is manually triggered
+
+name: Build Guide
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-guide:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: ['8', '11']
+    env:
+      JDK_VERSION:  ${{ matrix.java }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/cache@v2
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java }}
+      - name: Invoke build-gradle script
+        run: ./actions-build-guide.sh
