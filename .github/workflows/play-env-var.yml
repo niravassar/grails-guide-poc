@@ -1,0 +1,13 @@
+name: Play Env Var
+
+on:
+  workflow_dispatch:
+
+jobs:
+  print-stuff:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_CONTEXT: ${{ toJSON(github) }}
+    steps:
+      - name: print variables
+        run: echo "$GITHUB_CONTEXT"
