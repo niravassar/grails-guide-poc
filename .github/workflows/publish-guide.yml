@@ -31,4 +31,4 @@ jobs:
           git config --global user.email "$GIT_EMAIL"
           git add .
           git commit -a -m "adding the myfile.txt"
-          git push origin HEAD
+          git push
