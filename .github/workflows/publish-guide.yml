@@ -24,7 +24,7 @@ jobs:
           echo "******* cat myfile **********"
           cat myautofile.txt
           echo "******* ls files **********"
-          ls -
+          ls -al
           echo $GITHUB_REF
           echo "******** committing the file *********"
           git config --global user.name "$GIT_NAME"
