@@ -33,7 +33,7 @@ echo "******** print token ****"
 echo "$GH_TOKEN"
 echo "******** clone repo ****"
 git clone https://${GH_TOKEN}@github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
-cd gh_pages
+cd gh-pages
 echo "******** show gh-pages ****"
 ls -al
 
