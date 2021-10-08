@@ -12,23 +12,22 @@ jobs:
       - name: Checkout private tools
         uses: actions/checkout@v2
         with:
-          repository: grails/grails-guides
+          repository: niravassar/dummy-repo
           token: ${{ secrets.GITHUB_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
-          ref: gh-pages
-          path: gh-pages
+          path: dummy-repo
       - name: Try Commit
         run: |
           echo "******* ls **********"
-          cd gh-pages
+          cd dummy-repo
           echo "******* create new file **********"
-          echo "insert text here" > myfile.txt
+          echo "insert text here" > myautofile.txt
           echo "******* cat myfile **********"
-          cat myfile.txt
+          cat myautofile.txt
           echo "******* ls files **********"
           ls -al
           echo "******** committing the file *********"
           git config --global user.name "$GIT_NAME"
           git config --global user.email "$GIT_EMAIL"
           git add .
-          git commit -a -m "adding the myfile.txt"
+          git commit -a -m "adding the myautofile.txt"
           git push
