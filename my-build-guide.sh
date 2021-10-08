@@ -26,13 +26,6 @@ export GUIDE_BRANCH_SHORT=${GUIDE_BRANCH##*refs/heads/}
 echo "******** clone repo ****"
 git clone https://${GH_TOKEN}@github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
 cd gh-pages
-echo "******* configuring git **********"
-git config --global user.name "$GIT_NAME"
-git config --global user.email "$GIT_EMAIL"
-git config --global credential.helper "store --file=~/.git-credentials"
-echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
-echo "******* cat creds **********"
-cat ~/.git-credentials
 echo "******* create new file **********"
 echo "insert text here" > myfile.txt
 echo "******* cat myfile **********"

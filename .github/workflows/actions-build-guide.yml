@@ -30,4 +30,11 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Invoke build-gradle script
+        uses: oleksiyrudenko/gha-git-credentials@v2.1
+        with:
+          global: true
+          name: ${{ github.actor }}
+          email: assarn@objectcomputing.com
+          actor: ${{ github.actor }}
+          token: ${{ github.token }}
         run: ./actions-build-guide.sh
