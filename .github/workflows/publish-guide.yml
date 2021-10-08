@@ -24,7 +24,8 @@ jobs:
           echo "******* cat myfile **********"
           cat myautofile.txt
           echo "******* ls files **********"
-          ls -al
+          ls -
+          echo $GITHUB_REF
           echo "******** committing the file *********"
           git config --global user.name "$GIT_NAME"
           git config --global user.email "$GIT_EMAIL"
@@ -33,4 +34,4 @@ jobs:
           git push https://$USERNAME:$REPO_KEY@github.com/niravassar/dummy-repo.git $GITHUB_REF
         env:
           REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: github-actions
+          USERNAME: ${{ github.actor }}
