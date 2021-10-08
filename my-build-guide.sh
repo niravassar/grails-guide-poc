@@ -27,6 +27,21 @@ echo "$GUIDE_BRANCH_SHORT"
 #fi
 #######################
 
+############ Try to run updateGuides Json troubleshooting code ================
+
+echo " ========= show guides.json before =========="
+cat gh-pages/guides.json
+
+echo "Updating Guides JSON"
+./gradlew updateGuidesJson || EXIT_STATUS=$?
+if [[ $EXIT_STATUS -ne 0 ]]; then
+    echo "updateGuidesJson failed"
+    rm -rf gh-pages
+    exit $EXIT_STATUS
+fi
+
+echo " ========= show guides.json after gradlew command =========="
+cat gh-pages/guides.json
 
 #if [ "$TRAVIS_BRANCH" = "master" ] || [ "$TRAVIS_BRANCH" = "grails3" ]; then
 #    if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
