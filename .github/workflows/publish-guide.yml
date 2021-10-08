@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: grails/grails-guides
-          token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
+          token: ${{ secrets.GITHUB_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
           path: gh-pages
       - name: Try Commit
         run: |
