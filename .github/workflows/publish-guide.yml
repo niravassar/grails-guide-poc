@@ -27,10 +27,8 @@ jobs:
           ls -al
           echo $GITHUB_REF
           echo "******** committing the file *********"
-          git config --global user.name "${{ env.GIT_NAME }}"
+          git config --global user.name "github-actions[bot]"
           git config --global user.email "${{ env.GIT_EMAIL }}"
           git add .
           git commit -a -m "adding the myautofile.txt"
-          echo "******** name and email *********"
-          echo "${{ github.actor }} --- "${{ env.GIT_EMAIL }}""
-          git push --force --quiet "https://${{ env.GIT_NAME }}:${{ secrets.GITHUB_TOKEN }}@github.com/niravassar/dummy-repo" master:master
+          git push
