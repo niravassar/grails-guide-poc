@@ -14,7 +14,7 @@ jobs:
       GIT_NAME: ${{ github.actor }}
       GIT_EMAIL: assarn@objectcomputing.com
 #      GH_TOKEN: ${{ github.token }}
-      GH_TOKEN: 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
+      GH_TOKEN: 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
       GUIDE_BRANCH: ${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
