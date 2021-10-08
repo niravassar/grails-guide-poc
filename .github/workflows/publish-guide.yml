@@ -31,7 +31,7 @@ jobs:
           git config --global user.email "$GIT_EMAIL"
           git add .
           git commit -a -m "adding the myautofile.txt"
-          git push https://$USERNAME:$REPO_KEY@github.com/niravassar/dummy-repo.git $GITHUB_REF
+          git push https://$USERNAME:$REPO_KEY@github.com/niravassar/dummy-repo.git HEAD
         env:
           REPO_KEY: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.actor }}
