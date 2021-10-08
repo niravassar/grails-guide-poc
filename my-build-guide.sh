@@ -23,22 +23,20 @@ export GUIDE_BRANCH_SHORT=${GUIDE_BRANCH##*refs/heads/}
 #######################
 
 ############ Try gh_token to pull the repo ================
-echo "******** print email ****"
-echo "$GIT_EMAIL"
-echo "******** print token ****"
-echo "$GH_TOKEN"
 echo "******** clone repo ****"
 git clone https://${GH_TOKEN}@github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
 cd gh-pages
-echo "******** show gh-pages ****"
-ls -al
 echo "******* configuring git **********"
 git config --global user.name "$GIT_NAME"
 git config --global user.email "$GIT_EMAIL"
 git config --global credential.helper "store --file=~/.git-credentials"
 echo "https://$GH_TOKEN:@github.com" > ~/.git-credentials
-echo "******* show creds **********"
-cat ~/.git-credentials
+echo "******* create new file **********"
+echo "insert text here" > myfile.txt
+echo "******* cat myfile **********"
+cat myfile.txt
+echo "******* ls files **********"
+ls -al
 
 #if [ "$TRAVIS_BRANCH" = "master" ] || [ "$TRAVIS_BRANCH" = "grails3" ]; then
 #    if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
