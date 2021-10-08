@@ -13,8 +13,7 @@ jobs:
           email: assarn@objectcomputing.com
           actor: ${{ github.actor }}
           token: ${{ github.token }}
-          credentials: ${{secrets.GIT_CREDENTIALS}}
-      - name: Run tests
+      - name: Try Commit
         run: |
           git clone https://github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
           cd gh-pages
