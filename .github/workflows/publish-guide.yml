@@ -6,14 +6,14 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
-      GIT_NAME: ${{ github.actor }}
+      GIT_NAME:
       GIT_EMAIL: assarn@objectcomputing.com
     steps:
       - name: Checkout private tools
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2${{ github.actor }}
         with:
           repository: niravassar/dummy-repo
-          token: ${{ secrets.TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
+          token: ${{ secrets.GITHUB_TOKEN }}
           path: dummy-repo
       - name: Try Commit
         run: |
@@ -31,7 +31,6 @@ jobs:
           git config --global user.email "$GIT_EMAIL"
           git add .
           git commit -a -m "adding the myautofile.txt"
-          git push https://$USERNAME:$REPO_KEY@github.com/niravassar/dummy-repo.git HEAD
-        env:
-          REPO_KEY: ${{ secrets.TOKEN }}
-          USERNAME: ${{ github.actor }}
+          echo "******** URL *********"
+          echo "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/niravassar/dummy-repo"
+          git push --force --quiet "https://${{ env.GIT_NAME }}:${{ secrets.GITHUB_TOKEN }}@github.com/niravassar/dummy-repo" master:master
