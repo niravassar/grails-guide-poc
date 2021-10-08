@@ -5,6 +5,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      GIT_NAME: ${{ github.actor }}
+      GIT_EMAIL: assarn@objectcomputing.com
     steps:
       - name: Checkout private tools
         uses: actions/checkout@v2
