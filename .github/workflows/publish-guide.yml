@@ -3,22 +3,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
-    - uses: fusion-engineering/setup-git-credentials@v2
-      with:
-        credentials: ${{secrets.GIT_CREDENTIALS}}
-    - run: |
-        git clone https://github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
-        cd gh-pages
-        echo "******* create new file **********"
-        echo "insert text here" > myfile.txt
-        echo "******* cat myfile **********"
-        cat myfile.txt
-        echo "******* ls files **********"
-        ls -al
-        echo "******** committing the file *********"
-        git add .
-        git commit -a -m "adding the myfile.txt"
-        git push origin HEAD
-
-
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fusion-engineering/setup-git-credentials@v2
+        with:
+          credentials: ${{secrets.GIT_CREDENTIALS}}
+      - name: Run tests
+        run: |
+          git clone https://github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
+          cd gh-pages
+          echo "******* create new file **********"
+          echo "insert text here" > myfile.txt
+          echo "******* cat myfile **********"
+          cat myfile.txt
+          echo "******* ls files **********"
+          ls -al
+          echo "******** committing the file *********"
+          git add .
+          git commit -a -m "adding the myfile.txt"
+          git push origin HEAD
