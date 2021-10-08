@@ -15,4 +15,5 @@ jobs:
       - name: Try Commit
         run: |
           echo "******* ls **********"
+          cd gh-pages
           ls -al
