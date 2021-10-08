@@ -6,7 +6,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
-      GIT_NAME:
+      GIT_NAME: ${{ github.actor }}
       GIT_EMAIL: assarn@objectcomputing.com
     steps:
       - name: Checkout private tools
@@ -27,8 +27,8 @@ jobs:
           ls -al
           echo $GITHUB_REF
           echo "******** committing the file *********"
-          git config --global user.name "$GIT_NAME"
-          git config --global user.email "$GIT_EMAIL"
+          git config --global user.name "${{ env.GIT_NAME }}"
+          git config --global user.email "${{ env.GIT_EMAIL }}"
           git add .
           git commit -a -m "adding the myautofile.txt"
           echo "******** URL *********"
