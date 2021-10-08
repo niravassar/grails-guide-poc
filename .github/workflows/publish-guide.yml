@@ -11,8 +11,8 @@ jobs:
           global: true
           name: Nirav Assar
           email: assarn@objectcomputing.com
-          actor: ${{ github.actor }}
-          token: '${{ secrets.GITHUB_TOKEN }}'
+          actor: niravassar
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Try Commit
         run: |
           git clone https://github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
