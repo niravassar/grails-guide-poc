@@ -17,4 +17,13 @@ jobs:
         run: |
           echo "******* ls **********"
           cd gh-pages
+          echo "******* create new file **********"
+          echo "insert text here" > myfile.txt
+          echo "******* cat myfile **********"
+          cat myfile.txt
+          echo "******* ls files **********"
           ls -al
+          echo "******** committing the file *********"
+          git add .
+          git commit -a -m "adding the myfile.txt"
+          git push origin HEAD
