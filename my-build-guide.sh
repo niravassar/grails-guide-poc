@@ -31,6 +31,11 @@ echo "$GUIDE_BRANCH_SHORT"
 
 echo "******** print token ****"
 echo "$GH_TOKEN"
+echo "******** clone repo ****"
+git clone https://${GH_TOKEN}@github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
+cd gh_pages
+echo "******** show gh-pages ****"
+ls -al
 
 #if [ "$TRAVIS_BRANCH" = "master" ] || [ "$TRAVIS_BRANCH" = "grails3" ]; then
 #    if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
