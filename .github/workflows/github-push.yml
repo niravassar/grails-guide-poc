@@ -14,10 +14,8 @@ jobs:
         with:
           repository: niravassar/dummy-repo
           token: ${{ secrets.GITHUB_TOKEN }}
-          path: dummy-repo
       - name: Try Commit
         run: |
-          cd dummy-repo
           echo "insert text here" > myautofile.txt
           cat myautofile.txt
           ls -al
