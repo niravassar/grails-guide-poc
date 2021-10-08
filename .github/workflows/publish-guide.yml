@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: niravassar/dummy-repo
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ github.token }}
           path: dummy-repo
       - name: Try Commit
         run: |
@@ -25,9 +25,8 @@ jobs:
           cat myautofile.txt
           echo "******* ls files **********"
           ls -al
-          echo $GITHUB_REF
           echo "******** committing the file *********"
-          git config --global user.name "github-actions[bot]"
+          git config --global user.name "${{ env.GIT_NAME }}"
           git config --global user.email "${{ env.GIT_EMAIL }}"
           git add .
           git commit -a -m "adding the myautofile.txt"
