@@ -6,24 +6,13 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+      - name: Checkout private tools
+        uses: actions/checkout@v2
         with:
-          global: true
-          name: Nirav Assar
-          email: assarn@objectcomputing.com
-          actor: niravassar
-          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: grails/grails-guides
+          token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
+          path: gh-pages
       - name: Try Commit
         run: |
-          git clone https://github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
-          cd gh-pages
-          echo "******* create new file **********"
-          echo "insert text here" > myfile.txt
-          echo "******* cat myfile **********"
-          cat myfile.txt
-          echo "******* ls files **********"
+          echo "******* ls **********"
           ls -al
-          echo "******** committing the file *********"
-          git add .
-          git commit -a -m "adding the myfile.txt"
-          git push origin HEAD
