@@ -10,7 +10,7 @@ jobs:
       GIT_EMAIL: assarn@objectcomputing.com
     steps:
       - name: Checkout private tools
-        uses: actions/checkout@v2${{ github.actor }}
+        uses: actions/checkout@v2
         with:
           repository: niravassar/dummy-repo
           token: ${{ secrets.GITHUB_TOKEN }}
