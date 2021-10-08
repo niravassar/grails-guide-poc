@@ -15,6 +15,5 @@ jobs:
       - name: Try Commit
         run: |
           echo "******* ls **********"
-          git checkout -b gh-pages
           cd gh-pages
           ls -al
