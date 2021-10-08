@@ -9,10 +9,10 @@ jobs:
       - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
           global: true
-          name: ${{ github.actor }}
+          name: Nirav Assar
           email: assarn@objectcomputing.com
           actor: ${{ github.actor }}
-          token: ${{ github.token }}
+          token: '${{ secrets.GITHUB_TOKEN }}'
       - name: Try Commit
         run: |
           git clone https://github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
