@@ -3,11 +3,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: fusion-engineering/setup-git-credentials@v2
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
+          global: true
+          name: ${{ github.actor }}
+          email: assarn@objectcomputing.com
+          actor: ${{ github.actor }}
+          token: ${{ github.token }}
           credentials: ${{secrets.GIT_CREDENTIALS}}
       - name: Run tests
         run: |
