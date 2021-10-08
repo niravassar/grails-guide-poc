@@ -16,4 +16,5 @@ jobs:
         run: |
           echo "******* ls **********"
           cd gh-pages
+          git checkout gh-pages
           ls -al
