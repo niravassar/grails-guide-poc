@@ -11,7 +11,7 @@ jobs:
         with:
           repository: grails/grails-guides
           token: ${{ secrets.GITHUB_TOKEN }} # `GitHub_PAT` is a secret that contains your PAT
-          path:
+          path: gh-pages
       - name: Try Commit
         run: |
           echo "******* ls **********"
