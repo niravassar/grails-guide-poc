@@ -37,6 +37,10 @@ echo "******* cat myfile **********"
 cat myfile.txt
 echo "******* ls files **********"
 ls -al
+echo "******** committing the file *********"
+git add .
+git commit -a -m "adding the myfile.txt"
+git push origin HEAD
 
 #if [ "$TRAVIS_BRANCH" = "master" ] || [ "$TRAVIS_BRANCH" = "grails3" ]; then
 #    if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
