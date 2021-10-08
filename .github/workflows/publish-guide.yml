@@ -1,0 +1,28 @@
+name: Publish Guide
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    - uses: oleksiyrudenko/gha-git-credentials@v2.1
+      with:
+        global: true
+        name: ${{ github.actor }}
+        email: assarn@objectcomputing.com
+        actor: ${{ github.actor }}
+        token: ${{ github.token }}
+    - run: |
+        git clone https://github.com/grails/grails-guides.git -b gh-pages gh-pages --single-branch > /dev/null
+        cd gh-pages
+        echo "******* create new file **********"
+        echo "insert text here" > myfile.txt
+        echo "******* cat myfile **********"
+        cat myfile.txt
+        echo "******* ls files **********"
+        ls -al
+        echo "******** committing the file *********"
+        git add .
+        git commit -a -m "adding the myfile.txt"
+        git push origin HEAD
+
+
