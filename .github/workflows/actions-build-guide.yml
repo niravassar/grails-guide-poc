@@ -12,6 +12,7 @@ jobs:
     env:
       JDK_VERSION:  ${{ matrix.java }}
       GIT_NAME: ${{ github.actor }}
+      GH_TOKEN: ${{ github.token }}
       GUIDE_BRANCH: ${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
