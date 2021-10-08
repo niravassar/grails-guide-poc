@@ -30,7 +30,7 @@ echo "$GUIDE_BRANCH_SHORT"
 ############ Try gh_token to pull the repo ================
 
 echo "******** print token ****"
-echo "$GH_TOKEN
+echo "$GH_TOKEN"
 
 #if [ "$TRAVIS_BRANCH" = "master" ] || [ "$TRAVIS_BRANCH" = "grails3" ]; then
 #    if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
