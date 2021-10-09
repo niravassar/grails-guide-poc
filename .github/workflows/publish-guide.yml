@@ -12,7 +12,7 @@ jobs:
       - name: Checkout private tools
         uses: actions/checkout@v2
         with:
-          repository: niravassar/dummy-repo
+          #repository: niravassar/dummy-repo
           token: ${{ secrets.GITHUB_TOKEN }}
           path: dummy-repo
       - name: Try Commit
