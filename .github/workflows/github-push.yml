@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: niravassar/dummy-repo
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_PAT }}
       - name: Try Commit
         run: |
           echo "insert text here" > myautofile.txt
