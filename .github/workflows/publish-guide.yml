@@ -14,7 +14,7 @@ jobs:
         with:
           repository: grails/grails-guides
           token: ${{ secrets.MY_PAT }}
-          ref: gh-page
+          ref: gh-pages
           path: gh-pages
       - name: Try Commit
         run: |
