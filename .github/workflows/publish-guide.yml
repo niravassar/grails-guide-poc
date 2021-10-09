@@ -18,7 +18,7 @@ jobs:
       - name: Try Commit
         run: |
           cd dummy-repo
-          echo "insert text here" > myautofile.txt
+          echo "insert text here" >> myautofile.txt
           cat myautofile.txt
           ls -al
           echo "******** committing the file *********"
