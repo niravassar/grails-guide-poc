@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: niravassar/dummy-repo
-          token: ${{ github.token }}
+          token: ${{ secrets.MY_PAT }}
           path: dummy-repo
       - name: Try Commit
         run: |
