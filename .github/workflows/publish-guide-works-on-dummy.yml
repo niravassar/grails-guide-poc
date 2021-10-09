@@ -1,4 +1,4 @@
-name: Publish Guide
+name: Publish Guide WORK ON DUMMY
 on:
   workflow_dispatch:
 
@@ -9,21 +9,20 @@ jobs:
       GIT_NAME: ${{ github.actor }}
       GIT_EMAIL: assarn@objectcomputing.com
     steps:
-      - name: Checkout grails-guide-repo
+      - name: Checkout private tools
         uses: actions/checkout@v2
         with:
-          repository: grails/grails-guides
+          repository: niravassar/dummy-repo
           token: ${{ secrets.MY_PAT }}
-          ref: gh-page
-          path: gh-pages
+          path: dummy-repo
       - name: Try Commit
         run: |
-          cd gh-pages
+          cd dummy-repo
           echo "insert text here" >> myautofile.txt
           cat myautofile.txt
           ls -al
           echo "******** committing the file *********"
-          git config --global user.name "${{ env.GIT_NAME }}"
+          git config --global user.name "github-actions[bot]"
           git config --global user.email "${{ env.GIT_EMAIL }}"
           git add .
           git commit -a -m "adding the myautofile.txt"
