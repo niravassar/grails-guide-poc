@@ -28,7 +28,12 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Checkout Working Guide
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Invoke Check and PublishGuide Tasks
         run: ./check-and-publishGuide-download.sh
+#      - name: Checkout grails-guide-repo
+#        uses: actions/checkout@v2
+#        with:
+#          repository: grails/grails-guides
+#          token: ${{ secrets.MY_PAT }}
+#          ref: gh-pages
+#          path: gh-pages
