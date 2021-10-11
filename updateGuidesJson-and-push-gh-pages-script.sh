@@ -21,17 +21,7 @@ fi
 echo "***** Copy guide docs into gh pages"
 
 cd gh-pages
-
-echo "********************* ls before copy ********"
-ls -al
-
 mkdir -p "$GUIDE_NAME"
 cp -r ../build/docs/. "./$GUIDE_NAME/"
-
-echo "****************** ls after copy *************"
-ls -al
-ls -al grails-guide-poc
-echo "****************** cat index.html page *************"
-cat grails-guide-poc/guide/index.html
 
 exit 0
