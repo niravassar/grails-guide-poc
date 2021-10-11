@@ -1,3 +1,7 @@
+###################################
+# Downloads the resuable scripts from infrastructure and invokes them
+###################################
+
 #!/bin/bash
 set -e
 
@@ -8,4 +12,4 @@ set -e
 #chmod 777 build-guide
 ############
 
-./my-build-guide.sh
+./check-and-publishGuide-script.sh

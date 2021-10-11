@@ -19,10 +19,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: ${{ matrix.java }}
-      - name: Checkout Working Guide
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Cash Gradle Artifacts
         uses: actions/cache@v2
         with:
@@ -30,5 +26,9 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+      - name: Checkout Working Guide
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Invoke build-gradle script
-        run: ./actions-build-guide.sh
+        run: ./check-and-publishGuide-tasks.sh
