@@ -5,11 +5,5 @@
 #!/bin/bash
 set -e
 
-############ WORKS
-#export EXIT_STATUS=0
-
-#curl -O https://raw.githubusercontent.com/grails/grails-guides/master/action-scripts/check-and-publishGuide-script.sh
-#chmod 777 check-and-publishGuide-script.sh
-############
-
-./check-and-publishGuide-script.sh
+curl -O https://raw.githubusercontent.com/grails/grails-guides/master/action-scripts/check-and-publishGuide-script.sh
+chmod 777 check-and-publishGuide-script.sh
