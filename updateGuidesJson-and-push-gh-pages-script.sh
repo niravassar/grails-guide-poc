@@ -23,15 +23,15 @@ cd gh-pages
 mkdir -p "$GUIDE_NAME"
 cp -r ../build/docs/. "./$GUIDE_NAME/"
 
-echo "***** Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
+export COMMIT_DESC="Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW; GITHIB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
 
 if git diff --quiet; then
-    echo "**** No changes in Guide, so no push executed"
+    echo "***** No changes in Guide, so no push executed"
 else
     git config --global user.name $GIT_NAME
     git config --global user.email $GIT_EMAIL
     git add .
-    git commit -a -m "Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW; GITHIB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
+    git commit -a -m $COMMIT_DESC
     git push origin HEAD
 fi
 
