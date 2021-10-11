@@ -24,7 +24,7 @@ mkdir -p "$GUIDE_NAME"
 cp -r ../build/docs/. "./$GUIDE_NAME/"
 
 export COMMIT_DESC="Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW; GITHIB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
-echo $COMMIT_DESC
+echo "***** $COMMIT_DESC"
 
 if git diff --quiet; then
     echo "***** No changes in Guide, so no push executed"
