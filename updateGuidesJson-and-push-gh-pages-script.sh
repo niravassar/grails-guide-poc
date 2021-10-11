@@ -25,10 +25,14 @@ cp -r ../build/docs/. "./$GUIDE_NAME/"
 
 echo "***** Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
 
-git config --global user.name $GIT_NAME
-git config --global user.email $GIT_EMAIL
-git add .
-git commit -a -m "Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW; GITHIB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
-git push origin HEAD
+if git diff --quiet; then
+    echo "**** No changes in Guide, so no push executed"
+else
+    git config --global user.name $GIT_NAME
+    git config --global user.email $GIT_EMAIL
+    git add .
+    git commit -a -m "Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW; GITHIB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
+    git push origin HEAD
+fi
 
 exit 0
