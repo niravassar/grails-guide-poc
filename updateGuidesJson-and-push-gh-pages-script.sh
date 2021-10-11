@@ -31,5 +31,7 @@ cp -r ../build/docs/. "./$GUIDE_NAME/"
 echo "****************** ls after copy *************"
 ls -al
 ls -al grails-guide-poc
+echo "****************** cat index.html page *************"
+cat grails-guide-poc/index.html
 
 exit 0
