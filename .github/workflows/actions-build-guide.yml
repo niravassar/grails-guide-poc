@@ -37,7 +37,8 @@ jobs:
           token: ${{ secrets.MY_PAT }}
           ref: gh-pages
           path: gh-pages
-      - run: |
+      - name: Push Guide to gh-pages
+        run: |
           echo "**************** ls after the second checkout *********"
           ls -al
           echo "**************** cd gh-pages then ls *********"
