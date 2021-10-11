@@ -15,7 +15,8 @@ jobs:
       GIT_EMAIL: assarn@objectcomputing.com
       GUIDE_BRANCH: ${{ github.ref }}
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Working Guide
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - uses: actions/cache@v2
