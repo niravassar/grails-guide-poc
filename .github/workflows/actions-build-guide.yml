@@ -31,4 +31,4 @@ jobs:
         with:
           fetch-depth: 0
       - name: Invoke Check and PublishGuide Tasks
-        run: ./check-and-publishGuide-tasks.sh
+        run: ./check-and-publishGuide-download.sh

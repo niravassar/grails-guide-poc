@@ -1,5 +1,5 @@
 ###################################
-# Downloads the resuable scripts from infrastructure and invokes them
+# Downloads the reusable scripts from infrastructure and invokes them
 ###################################
 
 #!/bin/bash
