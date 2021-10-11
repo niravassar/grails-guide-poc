@@ -26,6 +26,8 @@ cp -r ../build/docs/. "./$GUIDE_NAME/"
 
 echo "***** Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
 
+git config --global user.name $GIT_NAME
+git config --global user.email $GIT_EMAIL
 git add .
 git commit -a -m "***** Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
 git push origin HEAD
