@@ -30,6 +30,6 @@ cp -r ../build/docs/. "./$GUIDE_NAME/"
 
 echo "****************** ls after copy *************"
 ls -al
-ls -al build
+ls -al grails-guide-poc
 
 exit 0
