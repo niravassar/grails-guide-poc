@@ -15,19 +15,20 @@ jobs:
       GIT_EMAIL: assarn@objectcomputing.com
       GUIDE_BRANCH: ${{ github.ref }}
     steps:
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java }}
       - name: Checkout Working Guide
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: actions/cache@v2
+      - name: Cash Gradle Artifacts
+        uses: actions/cache@v2
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-      - name: Set up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: ${{ matrix.java }}
       - name: Invoke build-gradle script
         run: ./actions-build-guide.sh
