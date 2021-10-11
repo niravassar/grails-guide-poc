@@ -13,7 +13,6 @@ jobs:
       JDK_VERSION:  ${{ matrix.java }}
       GIT_NAME: ${{ github.actor }}
       GIT_EMAIL: assarn@objectcomputing.com
-      GH_TOKEN: ${{ github.token }}
       GUIDE_BRANCH: ${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
