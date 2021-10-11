@@ -32,6 +32,6 @@ echo "****************** ls after copy *************"
 ls -al
 ls -al grails-guide-poc
 echo "****************** cat index.html page *************"
-cat grails-guide-poc/index.html
+cat grails-guide-poc/guide/index.html
 
 exit 0
