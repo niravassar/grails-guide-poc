@@ -7,7 +7,6 @@ set -e
 
 export EXIT_STATUS=0
 export GUIDE_NAME=${PWD##*/}
-export GUIDE_BRANCH_TRIMMED=${GUIDE_BRANCH##*refs/heads/}
 
 echo "***** Run updateGuidesJson to copy a new index into gh-pages"
 
@@ -29,7 +28,7 @@ echo "***** Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW
 git config --global user.name $GIT_NAME
 git config --global user.email $GIT_EMAIL
 git add .
-git commit -a -m "***** Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
+git commit -a -m "Pushing Grails Guide: $GUIDE_NAME; GITHUB_WORKFLOW: $GITHUB_WORKFLOW; GITHIB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
 git push origin HEAD
 
 exit 0
