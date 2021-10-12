@@ -1,4 +1,4 @@
-name: Build Guide
+name: Build And Publish Guide
 
 on:
   workflow_dispatch:
