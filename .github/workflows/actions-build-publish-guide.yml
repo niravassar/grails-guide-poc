@@ -29,7 +29,7 @@ jobs:
       - name: Checkout Working Guide
         uses: actions/checkout@v2
       - name: Invoke check and publishGuide Tasks
-        run: ./check-and-publishGuide-download.sh
+        run: /action-scripts/check-and-publishGuide-download.sh
       - name: Checkout grails-guide repo
         uses: actions/checkout@v2
         with:
@@ -38,4 +38,4 @@ jobs:
           ref: gh-pages
           path: gh-pages
       - name: Invoke updateGuidesJson and push guide to gh-pages
-        run: ./updateGuidesJson-and-push-gh-pages-download.sh
+        run: /action-scripts/updateGuidesJson-and-push-gh-pages-download.sh
